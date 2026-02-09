@@ -7,4 +7,14 @@ def init_database():
     return n, r, d, id
 
 def display_menu():
+    un = input("What is your full name?")
+    print("1. add_member")
+    print("2. remove_member")
+    print("3. update_rank")
+    print("4. display_roster")
+    print("5. search_crew")
+    print("6. filter_by_division")
+    print("7. calculate_payroll")
+    print("8. count_officers")
+
     
