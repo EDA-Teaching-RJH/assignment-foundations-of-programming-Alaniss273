@@ -17,4 +17,20 @@ def display_menu():
     print("7. calculate_payroll")
     print("8. count_officers")
 
-    
+    opt = input("Select option: ")
+
+def add_member():
+    nid = input("What is the ID?")
+    if nid in id:
+        print("ID is not unique.")
+        return
+
+    nr = input("What is the new rank?")
+    if nr not in r:
+        print("Rank is not valid.")
+        return
+
+    n.append(input("What is their name?"))
+    r.append(nr)
+    d.append("What is their division?")
+    id.append(nid)
