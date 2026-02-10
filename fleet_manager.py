@@ -58,8 +58,11 @@ def update_rank():
     
     nr = input("What is the new rank?")
 
-    for i in range(len(n)):
+    for i in range(len(id)):
         if id[i] == wid:
             r[i] == nr
             print("Rank is successfully updated.")
+            print(id[i] + " - " + r[i])
             return
+
+    
