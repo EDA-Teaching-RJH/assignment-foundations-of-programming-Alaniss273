@@ -2,28 +2,30 @@ def init_database():
     n = ["Kirk", "Spock", "Picard", "Janeway", "Sisko"]
     r = ["Captain", "Commander", "Captain", "Captain", "Captain"]
     d = ["Command", "SCience", "Command", "Command", "Command"]
-    id = ["SC 937-0176 CEC", "S 179-276 SP", "SP 937-215", "SJ 854-336", "SS 682-190"]
+    ids = ["SC 937-0176 CEC", "S 179-276 SP", "SP 937-215", "SJ 854-336", "SS 682-190"]
 
-    return n, r, d, id
+    return n, r, d, ids
 
-n, r, d, id = init_database()
+n, r, d, ids = init_database()
 
-def display_menu():
+def main():
+    print("Welcome Fleet Manager!")
     un = input("What is your full name?")
-    print("1. add_member")
-    print("2. remove_member")
-    print("3. update_rank")
-    print("4. display_roster")
-    print("5. search_crew")
-    print("6. filter_by_division")
-    print("7. calculate_payroll")
-    print("8. count_officers")
 
+    print("\nOptions Menu:")
+    print("1. Add member")
+    print("2. Remove member")
+    print("3. Update rank")
+    print("4. Display roster")
+    print("5. Search crew")
+    print("6. Filter by division")
+    print("7. Calculate payroll")
+    print("8. Count officers")
+    
     opt = input("Select option: ")
 
-def add_member():
     nid = input("What is the ID?")
-    if nid in id:
+    if nid in ids:
         print("ID is not unique.")
         return
 
@@ -34,25 +36,27 @@ def add_member():
 
     n.append(input("What is their name?"))
     r.append(nr)
-    d.append("What is their division?")
-    id.append(nid)
+    d.append(input("What is their division?"))
+    ids.append(nid)
 
+    print("Member added successfully.")
 def remove_member():
     wid = input("What is the ID?")
-    if wid not in id:
+    if wid not in ids:
         print("ID cannot be found.")
         return
-    index = id.index(wid)
-
+        
+    index = ids.index(wid)
     n.pop(index)
     r.pop(index)
     d.pop(index)
-    id.pop(index)
+    ids.pop(index)
+
     print("Member has been removed.")
 
 def update_rank():
     wid = input("What is the ID?")
-    if wid not in id:
+    if wid not in ids:
         print("ID cannot be found.")
         return
     
@@ -60,6 +64,4 @@ def update_rank():
     print("Rank is successfully updated.")
     return
 
-def display_roster():
-
-    
+main()
