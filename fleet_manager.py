@@ -42,7 +42,7 @@ def remove_member():
     if wid not in id:
         print("ID cannot be found.")
         return
-    index = ids.index(wid)
+    index = id.index(wid)
 
     n.pop(index)
     r.pop(index)
@@ -50,5 +50,16 @@ def remove_member():
     id.pop(index)
     print("Member has been removed.")
 
-def update_rank
+def update_rank():
+    wid = input("What is the ID?")
+    if wid not in id:
+        print("ID cannot be found.")
+        return
     
+    nr = input("What is the new rank?")
+
+    for i in range(len(n)):
+        if id[i] == wid
+            r[i] == nr
+            print("Rank is successfully updated.")
+            return
