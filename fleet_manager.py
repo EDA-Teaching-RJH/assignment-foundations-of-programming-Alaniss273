@@ -6,6 +6,8 @@ def init_database():
 
     return n, r, d, id
 
+n, r, d, id = init_database()
+
 def display_menu():
     un = input("What is your full name?")
     print("1. add_member")
@@ -34,3 +36,6 @@ def add_member():
     r.append(nr)
     d.append("What is their division?")
     id.append(nid)
+
+def remove_member():
+    wid = input("What is the ID?")
