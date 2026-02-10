@@ -39,3 +39,16 @@ def add_member():
 
 def remove_member():
     wid = input("What is the ID?")
+    if wid not in id:
+        print("ID cannot be found.")
+        return
+    index = ids.index(wid)
+
+    n.pop(index)
+    r.pop(index)
+    d.pop(index)
+    id.pop(index)
+    print("Member has been removed.")
+
+def update_rank
+    
