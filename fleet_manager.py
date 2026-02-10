@@ -24,44 +24,46 @@ def main():
     
     opt = input("Select option: ")
 
-    nid = input("What is the ID?")
-    if nid in ids:
-        print("ID is not unique.")
-        return
-
-    nr = input("What is the new rank?")
-    if nr not in r:
-        print("Rank is not valid.")
-        return
-
-    n.append(input("What is their name?"))
-    r.append(nr)
-    d.append(input("What is their division?"))
-    ids.append(nid)
-
-    print("Member added successfully.")
-def remove_member():
-    wid = input("What is the ID?")
-    if wid not in ids:
-        print("ID cannot be found.")
-        return
+    def add_member():
         
-    index = ids.index(wid)
-    n.pop(index)
-    r.pop(index)
-    d.pop(index)
-    ids.pop(index)
+        nid = input("What is the new ID?")
+        if nid in ids:
+            print("ID is not unique.")
+            return
 
-    print("Member has been removed.")
+        nr = input("What is the new rank?")
+        if nr not in r:
+            print("Rank is not valid.")
+            return
 
-def update_rank():
-    wid = input("What is the ID?")
-    if wid not in ids:
-        print("ID cannot be found.")
-        return
+        n.append(input("What is their name?"))
+        r.append(nr)
+        d.append(input("What is their division?"))
+        ids.append(nid)
+
+        print("Member added successfully.")
+        
+    def remove_member():
+        wid = input("What is the ID?")
+        if wid not in ids:
+            print("ID cannot be found.")
+            return
+        
+        index = ids.index(wid)
+        n.pop(index)
+        r.pop(index)
+        d.pop(index)
+        ids.pop(index)
+
+        print("Member has been removed.")
+
+    def update_rank():
+        wid = input("What is the ID?")
+        if wid not in ids:
+            print("ID cannot be found.")
+            return
     
-    nr = input("What is the new rank?")
-    print("Rank is successfully updated.")
-    return
-
+        nr = input("What is the new rank?")
+        print("Rank is successfully updated.")
+        return
 main()
