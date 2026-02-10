@@ -57,12 +57,9 @@ def update_rank():
         return
     
     nr = input("What is the new rank?")
+    print("Rank is successfully updated.")
+    return
 
-    for i in range(len(id)):
-        if id[i] == wid:
-            r[i] == nr
-            print("Rank is successfully updated.")
-            print(id[i] + " - " + r[i])
-            return
+def display_roster():
 
     
