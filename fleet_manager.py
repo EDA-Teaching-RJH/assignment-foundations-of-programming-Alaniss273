@@ -6,18 +6,21 @@ def init_database():
 
     return n, r, d, ids
 
-print("Welcome Fleet Manager!")
-un = input("What is your full name?")
+n, r, d, ids = init_database()
 
-print("\nOptions Menu:")
-print("1. Add member")
-print("2. Remove member")
-print("3. Update rank")
-print("4. Display roster")
-print("5. Search crew")
-print("6. Filter by division")
-print("7. Calculate payroll")
-print("8. Count officers")
+def display_menu():   
+    print("Welcome Fleet Manager!")
+    un = input("What is your full name?")
+
+    print("\nOptions Menu:")
+    print("1. Add member")
+    print("2. Remove member")
+    print("3. Update rank")
+    print("4. Display roster")
+    print("5. Search crew")
+    print("6. Filter by division")
+    print("7. Calculate payroll")
+    print("8. Count officers")
     
 opt = input("Select option: ")
 
@@ -74,7 +77,7 @@ def search_crew():
           if sc in n[i]:
                print(n[i], r[i], d[i], ids[i])
 
-def filter_by_divisions():
+def filter_by_division():
      
 
 def calculate_payroll():
@@ -106,13 +109,17 @@ def main():
             remove_member(n, r, d, ids)
 
         elif choice == "3":
-            update_member(n, r, ids)
+            update_rank(n, r, ids)
 
         elif choice == "4":
             search_crew(n, r, d, ids)
 
         elif choice == "5":
-             filter_by_division(n, d)
+            filter_by_division(n, d)
 
         elif choice == "6":
-             
+            calculate_payroll(r)
+
+        elif choice == "7":
+            count_officers(r)
+main()
