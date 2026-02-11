@@ -100,4 +100,19 @@ def main():
         opt = display_menu()
 
         if choice == "1":
-             add_member()
+            add_member(n, r, d, ids)
+        
+        elif choice == "2":
+            remove_member(n, r, d, ids)
+
+        elif choice == "3":
+            update_member(n, r, ids)
+
+        elif choice == "4":
+            search_crew(n, r, d, ids)
+
+        elif choice == "5":
+             filter_by_division(n, d)
+
+        elif choice == "6":
+             
