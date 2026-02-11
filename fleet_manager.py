@@ -92,11 +92,13 @@ def filter_by_division(n, d):
 
 def calculate_payroll(r):
     pay = 0
-    for r in r:
-        if r == "Captain":
+    for pr in r:
+        if pr == "Captain":
             pay += 200
-        else: 
+        elif pr == "Commander": 
              pay += 300
+        else:
+            pay += 100
     return pay 
 
 def count_officers(r):
@@ -131,7 +133,8 @@ def main():
             filter_by_division(n, d)
 
         elif opt == "7":
-            calculate_payroll(r)
+            total = calculate_payroll(r)
+            print("Total payroll is:", total)
 
         elif opt == "8":
             count_officers(r)
