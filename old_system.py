@@ -2,20 +2,17 @@ n = ["Picard", "Riker", "Data", "Worf"]
 r = ["Captain", "Commander", "Lt. Commander", "Lieutenant"]
 d = ["Command", "Command", "Operations", "Security"]
 
-active = True
 
 def run_system_monolith():
     print("BOOTING SYSTEM...")
     print("...")
     print("WELCOME TO FLEET COMMAND")
     
-    
     loading = 0
     while loading < 5:
         print("Loading module " + str(loading))
         loading += 1
         
-    
     while True:
         print("\n--- MENU ---")
         print("1. View Crew")
@@ -46,6 +43,7 @@ def run_system_monolith():
         elif opt == "3":
             rem = input("Name to remove: ")
            
+        if rem in n:
             idx = n.index(rem)
             n.pop(idx)
             r.pop(idx)
