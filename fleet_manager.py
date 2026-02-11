@@ -9,9 +9,6 @@ def init_database():
 n, r, d, ids = init_database()
 
 def display_menu():   
-    un = input("What is your full name?")
-    print("\nWelcome Fleet Manager! - " + un)
-
     print("\nOptions Menu:")
     print("1. Add member")
     print("2. Remove member")
@@ -21,6 +18,7 @@ def display_menu():
     print("6. Filter by division")
     print("7. Calculate payroll")
     print("8. Count officers")
+    print("9. Exit")
     
     opt = input("Select option: ")
     return opt
@@ -102,14 +100,19 @@ def calculate_payroll(r):
     return pay 
 
 def count_officers(r):
+    target = input("Are you looking for 'Captain' or 'Commander'?")
+
     count = 0
-    for r in r:
-        if r == "Captain" or r == "Commander":
-            count = count + 1
+    for cr in r:
+        if cr == target:
+            count += 1
     return count 
 
 def main():
     n, r, d, ids = init_database()
+
+    un = input("What is your full name?")
+    print("\nWelcome Fleet Manager! - " + un)
 
     while True:
         opt = display_menu()
@@ -137,7 +140,14 @@ def main():
             print("Total payroll is:", total)
 
         elif opt == "8":
-            count_officers(r)
+            total = count_officers(r)
+            print("Number of officers is:", total)
+        
+        elif opt == "9":
+            print("Goodbye! - " + un)
+            print("...")
+            print("Shut down successful")
+            break
 
         else: 
             print("Invalid option.")
